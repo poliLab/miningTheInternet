@@ -1,0 +1,2 @@
+http://babe.kde.org
+https://stackoverflow.com/questions/45065447/using-the-existence-of-a-list-item-as-an-if-statement-conditional-with-python
