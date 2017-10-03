@@ -1,16 +1,19 @@
-from pymongo import MongoClient
+from db import DB
 from props import dictProp
+from props import schemas
+import props
 
+con = DB().connect()
+dict = schemas()
 dictProp()
 
-client = MongoClient('localhost', 27017)
 
-db = client.CrawlerIndex
+dict.dictDict[props.DICT.INIT.value]=dictProp.init
 
-initialDic = {"initSeeds": dictProp.dictInit }
+#print(props.DICT.INIT.value, type(props.DICT.INIT.value))
+#initialDic = {"initSeeds": dictProp.dictInit }
 
-
-db.dic.insert_one(initialDic)
+con.dic.insert_one(dict.dictDict)
 
 
 
