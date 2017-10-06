@@ -1,5 +1,16 @@
 from enum import Enum, unique
 
+@unique
+class SEEDT(Enum):
+    URL = 1
+    URLS = 2
+    FILE = 3
+    FOLDER = 4
+    
+@unique    
+class ACTIONS(Enum):
+    TAGS = 1
+    TAG = 2
 
 def dictProp():    
     dictProp.init=["noticia","información","colombia","nacional","clima","medio ambiente","ecologia","reporte","periodista","bogota","medellin","economia"]
