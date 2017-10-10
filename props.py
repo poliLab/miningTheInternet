@@ -12,13 +12,17 @@ class ACTIONS(Enum):
     TAGS = 1
     TAG = 2
 
-def dictProp():    
-    dictProp.init=["noticia","información","colombia","nacional","clima","medio ambiente","ecologia","reporte","periodista","bogota","medellin","economia"]
-    dictProp.initSize=len(dictProp.init)
-       
+class dictProp:  
+    init = ["noticia","información","colombia","nacional","clima","medio ambiente","ecologia","reporte","periodista","bogota","medellin","economia"]
+    ban = ["facebook","fb","twitter","instagram",".pdf",".doc",".docx",".jpg",".png","advertise","ads","mozilla","w3e"], 
+     
     
-def crawlerProp():
-    crawlerProp.deep=10;
+class crawlerProp:
+    depth=10
+    range=10 
+    freq=500  #ms
+    atlas = { "h1":10, "a":10, "h2":8, "h3":8, "h4":8, "p":9, "span":9, "label":7, "li":10, "b":10 ,"meta":10 }
+
 
 @unique
 class HISTORY(Enum):
@@ -48,6 +52,7 @@ class MAIN(Enum):
     TAGS = "tags" # [{}] array of tags, keywords
     DATE = "date"
     CONT = "content" # ref a CONTENTS _id
+    REC = "rec"
     
 @unique    
 class CONTENTS(Enum):
@@ -57,13 +62,6 @@ class CONTENTS(Enum):
     
 class schemas(): 
     def __init__(self):
-        self.historyDict = {
-            HISTORY.URL.value:"",
-            HISTORY.TITLE.value:"",
-            HISTORY.METAS.value:"",
-            HISTORY.REC.value:"",
-            HISTORY.COUNTER.value:""
-            }
         
         self.dictDict = {
             DICT.INIT.value:[],
@@ -79,7 +77,8 @@ class schemas():
             MAIN.LINKS.value:"",
             MAIN.TAGS.value:"",
             MAIN.DATE.value:"",
-            MAIN.CONT.value:""
+            MAIN.CONT.value:"",
+            MAIN.REC.value:""
             }
         
         self.contentsDict = {

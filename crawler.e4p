@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project crawler -->
+<!-- Saved: 2017-10-09, 22:10:45 -->
+<!-- Copyright (C) 2017 Camilo higuita,  -->
+<Project version="5.1">
+  <Language></Language>
+  <Hash>63f36b6d554232656475d533a06eb21c32cb8350</Hash>
+  <ProgLanguage mixed="0">Python3</ProgLanguage>
+  <ProjectType>Console</ProjectType>
+  <Version>0.1</Version>
+  <Author>Camilo higuita</Author>
+  <Email></Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>__init__.py</Source>
+    <Source>crawler.py</Source>
+    <Source>db.py</Source>
+    <Source>filter.py</Source>
+    <Source>main.py</Source>
+    <Source>parser.py</Source>
+    <Source>props.py</Source>
+    <Source>requester.py</Source>
+    <Source>saver.py</Source>
+  </Sources>
+  <Forms/>
+  <Translations/>
+  <Resources/>
+  <Interfaces/>
+  <Others>
+    <Other>seed.txt</Other>
+  </Others>
+  <MainScript>main.py</MainScript>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.e4p" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.md" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.rst" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.txt" type="OTHERS"/>
+    <FiletypeAssociation pattern="README" type="OTHERS"/>
+    <FiletypeAssociation pattern="README.*" type="OTHERS"/>
+  </FiletypeAssociations>
+</Project>
