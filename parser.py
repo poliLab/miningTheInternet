@@ -10,8 +10,11 @@ class Parser:
         return tags
     
     def getTag(self, tag):
-        soup = BS(markup=self.HTML, features='html.parser') 
-        return soup.find_all(tag)
+        try:
+            soup = BS(markup=self.HTML, features='html.parser')
+            return soup.find_all(tag)
+        except:
+            print(Exception())
 
 class Tag:
     def __init__(self, tag):
