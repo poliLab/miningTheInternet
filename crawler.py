@@ -28,14 +28,21 @@ class Crawly:
                 HTML = requester.getHtml()            
                 parser = Parser(HTML)
                 links = parser.getTag('a')
+                
+                p = parser.getTag('p')
+                
+                words = F.extractWords(p, 'np')
+                
                 depth += 1
                 
                 for link in links[:P.crawlerProp.range]:
                     if link is not None:
                         if Tag(link).hasKey('href'):
                             nURL = link['href'] if F.urlValid(link['href']) else (F.urlFix(URL, link['href']) if F.urlValid(F.urlFix(URL, link['href'])) else None)
-                            self.visited.append(nURL)
-                            self.crawl(nURL, depth) if nURL is not None else print("SKIPPING URL NOT VALID >> ",  nURL)
+                            
+                            if nURL is not None:
+                                self.visited.append(nURL)
+                                self.crawl(nURL, depth) if nURL is not None else print("SKIPPING URL NOT VALID >> ",  nURL)
             except:
                 print(Exception())
         else:
@@ -44,5 +51,5 @@ class Crawly:
         print(self.visited)
             
     def start(self):      
-        self.crawl(self.seed)
+        self.crawl(self.seed.strip())
 

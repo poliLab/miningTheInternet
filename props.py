@@ -14,15 +14,13 @@ class ACTIONS(Enum):
 
 class dictProp:  
     init = ["noticia","información","colombia","nacional","clima","medio ambiente","ecologia","reporte","periodista","bogota","medellin","economia"]
-    ban = ["facebook","fb","twitter","instagram",".pdf",".doc",".docx",".jpg",".png","advertise","ads","mozilla","w3e"], 
-     
+    ban = ["facebook","fb","twitter","instagram",".pdf",".doc",".docx",".jpg",".png","advertise","ads","mozilla","w3e"]
     
 class crawlerProp:
     depth=3
     range=3
     freq=500  #ms
     atlas = { "h1":10, "a":10, "h2":8, "h3":8, "h4":8, "p":9, "span":9, "label":7, "li":10, "b":10 ,"meta":10 }
-
 
 @unique
 class HISTORY(Enum):
