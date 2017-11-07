@@ -19,7 +19,7 @@ class Crawly:
     
     def crawl(self, URL, depth=0):
         
-        if depth < P.crawlerProp.depth and URL not in self.visited:
+        if depth < P.crawlerProp.depth:
             print("DEPTH >> ", depth)
             print("VISITING URL >> ",  URL)
             
@@ -29,20 +29,30 @@ class Crawly:
                 parser = Parser(HTML)
                 links = parser.getTag('a')
                 
-                p = parser.getTag('p')
+                #print(HTML)
+                words = []
+                words.extend(F.extractWords(links, 'v'))
+                words.extend(F.extractWords(parser.getTag('p'), 'v'))
+                words.extend(F.extractWords(parser.getTag('h3'), 'v'))
+                words.extend(F.extractWords(parser.getTag('h2'), 'v'))
+                words.extend(F.extractWords(parser.getTag('h1'), 'v'))
+                words.extend(F.extractWords(parser.getTag('span'), 'v'))
                 
-                words = F.extractWords(p, 'np')
+                print(words)
                 
                 depth += 1
                 
-                for link in links[:P.crawlerProp.range]:
+                for link in links:
                     if link is not None:
                         if Tag(link).hasKey('href'):
                             nURL = link['href'] if F.urlValid(link['href']) else (F.urlFix(URL, link['href']) if F.urlValid(F.urlFix(URL, link['href'])) else None)
                             
-                            if nURL is not None:
+                            if nURL is not None and nURL not in self.visited:
                                 self.visited.append(nURL)
-                                self.crawl(nURL, depth) if nURL is not None else print("SKIPPING URL NOT VALID >> ",  nURL)
+                                #print(nURL)
+                                self.crawl(nURL, depth)
+                            #else:
+                                #print("SKIPPING URL NOT VALID >> ",  nURL)                                
             except:
                 print(Exception())
         else:
@@ -50,6 +60,6 @@ class Crawly:
         
         print(self.visited)
             
-    def start(self):      
+    def start(self):     
         self.crawl(self.seed.strip())
 

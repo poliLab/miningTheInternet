@@ -18,7 +18,7 @@ def urlValid(URL):
 
 def urlFix(URL, LINK):
     nURL = URL+LINK
-    print("fixed URL>> ", nURL)
+    #print("fixed URL>> ", nURL)
     return LINK if (any(ban in LINK for ban in bannedIN) or any(ban == LINK for ban in bannedEQ)) else nURL
 
 def filterWords(words, filter):
