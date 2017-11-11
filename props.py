@@ -13,14 +13,15 @@ class ACTIONS(Enum):
     TAG = 2
 
 class dictProp:  
-    init = ["noticia","información","colombia","nacional","clima","medio ambiente","ecologia","reporte","periodista","bogota","medellin","economia"]
-    ban = ["facebook","fb","twitter","instagram",".pdf",".doc",".docx",".jpg",".png","advertise","ads","mozilla","w3e"]
+    init = ["noticia", "información", "colombia", "nacional", "clima", "medio ambiente", "ecologia", "naturaleza", "verde", "eco", "reciclaje", "reporte", "periodista", "bogota", "medellin", "economia"]
+    ban = ["facebook", "fb", "twitter", "instagram", ".pdf", ".doc", ".docx", ".jpg", ".png", "advertise", "ads", "ad", "mozilla", "w3e", "login", "singup", "registro", "iniciar", "sesion", "user", "usuario", "js", "javascript", "script", "session", "var"]
     
 class crawlerProp:
-    depth=3
-    range=3
-    freq=500  #ms
-    atlas = { "h1":10, "a":10, "h2":8, "h3":8, "h4":8, "p":9, "span":9, "label":7, "li":10, "b":10 ,"meta":10 }
+    depth = 3
+    range = 3
+    freq = 500  #ms
+    pos_tag = ['v', 'n', 'a']
+    atlas = {"h1": 10, "a": 10, "h2": 8, "h3": 8, "h4": 8, "p": 9, "span": 9, "label": 7, "li": 10, "b": 10, "meta": 10}
 
 @unique
 class HISTORY(Enum):
